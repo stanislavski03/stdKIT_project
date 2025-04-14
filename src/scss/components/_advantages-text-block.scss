@@ -1,0 +1,92 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.advantages-text-block {
+    text-align: left;
+    gap: 42px;
+    position: relative;
+    top: 5vh;
+    margin-left: 15vw;
+    
+
+
+    @include text-block(546px, 210px, #fff, #fff);
+
+    &__title {
+        line-height: 100%;
+    }
+
+    &__advantages-blocks {
+
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        justify-content: space-between;
+        gap: 30px;
+
+
+        [class^="advantages-blocks__advantage-"] {
+            min-height: 50px;
+            background: #fff;
+            border-radius: 40px;
+            padding: 20px;
+            display: grid;
+            align-items: center;
+            justify-content: center;
+            text-align: left;
+            font-size: 0.8vw;
+
+        }
+
+        &__advantage-first {
+            display: grid;
+            grid-template-areas:
+                "image null"
+                "title title";
+            grid-template-columns: auto 1fr;
+            gap: 10px;
+            padding: 15px;
+
+            &__img {
+                grid-area: image;
+                align-self: start;
+            }
+
+            img {
+                max-width: 50px;
+                /* Размер изображения */
+                height: 50px;
+                display: block;
+                padding: 15px;
+            }
+
+            &__title {
+                grid-area: title;
+                grid-column: 1 / -1;
+
+                /* Текст на всю ширину */
+            }
+        }
+
+
+
+
+
+    }
+}
+
+.ledies {
+    position:absolute;
+
+    &__ledy1 {
+        position: absolute;
+        top:77px;
+        left: 1106px;
+        z-index: 2;
+    }
+    &__ledy2 {
+        position: absolute;
+        top:77px;
+        left: 1220px;
+        z-index: 2;
+    }
+}

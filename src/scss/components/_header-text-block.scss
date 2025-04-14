@@ -1,0 +1,21 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.text-block {
+    text-align: left;
+    gap: 42px;
+    position: relative;
+    top: 20vh;
+    margin-left: 15vw;
+    
+    
+
+    @include text-block(433px, 302px, #fff, #fff);
+
+
+    button {
+        width: 10vw;
+        height: 5vh;
+    }
+
+}

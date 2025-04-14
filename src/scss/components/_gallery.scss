@@ -1,0 +1,209 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.gallery-container {
+  height: 757px;
+  position: relative;
+  margin-left: 15vw;
+  margin-right: 15vw;
+  z-index: 3;
+    background-color: #fff;
+
+
+  @include text-block(null, null, #000, #000);
+
+
+  .gallery-swiper {
+    width: 40%;
+    height: 40%;
+    padding: 0 30px;
+  }
+
+  .swiper-wrapper {
+    align-items: center;
+
+  }
+  .swiper-slide {
+    aspect-ratio: 3/4;
+    display: ruby;
+    align-items: center;
+
+    .slide-container {
+      height: 30vh;
+    }
+
+    &-title {
+      position: relative;
+      bottom: -10px;
+      left: 50%;
+      transform: translate(-50%, -20%);
+      -ms-transform: translate(-50%, -20%);
+      text-align: center;
+      padding: 10px 18px;
+      transition: all 0.5s linear;
+
+      span {
+        font-size: 1vw;
+        font-weight: 600;
+        line-height: 120%;
+        letter-spacing: 0%;
+        vertical-align: middle;
+      }
+    }
+
+    
+
+    &-description {
+      position: relative;
+      margin-top: 2vh;
+      margin-bottom: 2vh;
+      left: 50%;
+      transform: translate(-50%, -20%);
+      -ms-transform: translate(-50%, -20%);
+      text-align: center;
+      
+      transition: all 0.5s linear;
+
+      span {
+        
+        color: gray;
+        font-weight: 400;
+        font-size: 0.8vw;
+        line-height: 150%;
+        letter-spacing: 0%;
+        text-align: center;
+        vertical-align: middle;
+  
+      }
+    }
+
+    &-button {
+      position: relative;
+      margin-top: 2vh;
+      margin-bottom: 2vh;
+      left: 50%;
+      transform: translate(-50%, -20%);
+      -ms-transform: translate(-50%, -20%);
+      text-align: center;
+      padding: 10px 18px;
+      transition: all 0.5s linear;
+      
+      
+
+      button {
+      border: solid 1px;
+      border-color: #000;
+      width: 10vw;
+        height: 5vh;
+      }
+    }
+
+    &.swiper-slide-active {
+      opacity: 1;
+    }
+  }
+
+  .gallery-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    &:hover {
+      transform: scale(1.05);
+      cursor: pointer;
+    }
+
+  }
+
+  .gallery-button {
+    &-prev,
+    &-next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 40px;
+      background: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      cursor: pointer;
+      z-index: 11;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      border: none;
+      outline: none;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+      
+      &:hover {
+        background: #f5f5f5;
+      }
+
+      
+    }
+    
+    &-prev {
+      left: 5px;
+    }
+    
+    &-next {
+      right: 5px;
+    }
+
+    &--disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    
+    &--hidden {
+      display: none;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+  }
+
+  .swiper-fade-left {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 200px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    z-index: 10;
+    pointer-events: none; // Чтобы можно было кликать сквозь градиент
+  }
+
+  // Правый градиент
+  .swiper-fade-right {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 200px;
+    background: linear-gradient(270deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%; // Нужное количество пикселей
+    background-color: #fff; // Цвет заливки
+    z-index: 10;
+  }
+
+  &::before {
+    left: -100%; // Такой же размер как width
+  }
+
+  &::after {
+    right: -100%; // Такой же размер как width
+  }
+}

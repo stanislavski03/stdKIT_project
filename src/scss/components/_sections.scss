@@ -1,0 +1,27 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.section {
+    width: 100%;
+    z-index: 1;
+    
+    
+    &--blue {
+        background-color: $section-blue-color;
+        height: 800px;
+    }
+
+    &--white {
+        background-color: white;
+        height: 757px;
+    }
+
+    &--green {
+        background-color: $section-green-color;
+        height: 786px;
+        border-radius: 60px;
+        display: flex;
+    }
+    
+    
+}
