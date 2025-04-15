@@ -190,20 +190,21 @@
 
   &::before,
   &::after {
+    max-width: 100%;
     content: '';
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 100%; // Нужное количество пикселей
+    width: 30%; // Нужное количество пикселей
     background-color: #fff; // Цвет заливки
     z-index: 10;
   }
 
   &::before {
-    left: -100%; // Такой же размер как width
+    left: -30%; // Такой же размер как width
   }
 
   &::after {
-    right: -100%; // Такой же размер как width
+    right: -30%; // Такой же размер как width
   }
 }

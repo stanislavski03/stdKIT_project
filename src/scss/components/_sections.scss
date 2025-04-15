@@ -13,14 +13,17 @@
 
     &--white {
         background-color: white;
-        height: 757px;
+        height: 798px;
     }
 
     &--green {
         background-color: $section-green-color;
+        margin: 0 auto;
+        width: 98%;
         height: 786px;
         border-radius: 60px;
         display: flex;
+        
     }
     
     

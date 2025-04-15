@@ -1,0 +1,162 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.geography_section {
+    margin: 0 auto;
+    width: 98%;
+    height: 664px;
+    border-radius: 60px;
+}
+
+.geography-text-block {
+    text-align: left;
+    gap: 42px;
+    position: relative;
+    top: 5vh;
+    margin-left: 15vw;
+
+    @include text-block(546px, 210px, #fff, #fff);
+
+
+
+    button {
+        background-color: transparent;
+        border: solid 1px;
+        border-color: #fff;
+        color: #fff;
+        width: 10vw;
+        height: 5vh;
+        @include hover-effect($section-blue-color);
+    }
+
+
+    &__geography-blocks {
+        margin-top: 5vh;
+        display: grid;
+        width: 27vw;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-areas:
+            "first second second third"
+            "four five six six"
+            "seven seven eight eight";
+        gap: 30px;
+
+        .geography-blocks__geo-first {
+            grid-area: first;
+        }
+
+        .geography-blocks__geo-second {
+            grid-area: second;
+        }
+
+        .geography-blocks__geo-third {
+            grid-area: third;
+        }
+
+        .geography-blocks__geo-four {
+            grid-area: four;
+        }
+
+        .geography-blocks__geo-five {
+            grid-area: five;
+        }
+
+        .geography-blocks__geo-six {
+            grid-area: six;
+        }
+
+        .geography-blocks__geo-seven {
+            grid-area: seven;
+        }
+
+        .geography-blocks__geo-eight {
+            grid-area: eight;
+        }
+
+        // Общие стили для всех блоков
+        [class^="geography-blocks__geo-"] {
+            min-height: 30px;
+            background: #fff;
+            border-radius: 24px;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .geography-blocks__img {
+            max-width: 10vw;
+            height: 50px;
+            display: block;
+            padding: 15px;
+        }
+    }
+}
+
+.location {
+    position: absolute;
+    z-index: 2;
+    top: -80px;
+    left: 550px;
+    }
+
+.pin1 {
+    position: absolute;
+    z-index: 2;
+    top: 160px;
+    left: 730px;
+}
+.pin2 {
+    position: absolute;
+    z-index: 2;
+    top: 150px;
+    left: 780px;
+}
+.pin3 {
+    position: absolute;
+    z-index: 2;
+    top: 210px;
+    left: 870px;
+}
+.pin4 {
+    position: absolute;
+    z-index: 2;
+    top: 270px;
+    left: 1030px;
+}
+.pin5 {
+    position: absolute;
+    z-index: 2;
+    top: 350px;
+    left: 880px;
+}
+.pin6 {
+    position: absolute;
+    z-index: 2;
+    top: 250px;
+    left: 720px;
+}
+.pin7 {
+    position: absolute;
+    z-index: 2;
+    top: 235px;
+    left: 650px;
+}
+.pin8 {
+    position: absolute;
+    z-index: 2;
+    top: 265px;
+    left: 615px;
+}
+
+
+.geography-fade {
+    position: relative;
+    width: 80%;
+    height: 10vh;
+    background: linear-gradient(0deg,rgba(50, 98, 172, 1) 0%, rgba(87, 199, 133, 0) 100%);
+    top: 49%;
+    left: 10%;
+    
+}

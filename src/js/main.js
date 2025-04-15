@@ -9,7 +9,7 @@ import '../scss/components/_recipes.scss';
 
 
 
-// Ждем загрузки DOM
+
 document.addEventListener('DOMContentLoaded', () => {
   const prevBtn = document.querySelector('.gallery-button-prev');
   const nextBtn = document.querySelector('.gallery-button-next');
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const RnextBtn = document.querySelector('.recipe-button-next');
 
   const gallerySwiper = new Swiper('.gallery-swiper', {
-    // Основные параметры
+
     effect: "coverflow",
     grabCursor: true,
     centeredSlides: false,
@@ -31,7 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
     spaceBetween: 100,
 
     
-    // Эффект coverflow
     coverflowEffect: {
       rotate: 0,
       stretch: 80,
@@ -40,21 +39,21 @@ document.addEventListener('DOMContentLoaded', () => {
       slideShadows: true,
     },
     
-    // Навигация (исправленные селекторы)
+
     navigation: {
       nextEl: nextBtn,
       prevEl: prevBtn,
-      disabledClass: 'swiper-button--disabled' // Добавляем класс для неактивных кнопок
+      disabledClass: 'swiper-button--disabled' 
     },
     
-    // Отключаем пагинацию (если она не используется)
+
     pagination: {
       el: ".swiper-pagination",
       enabled: false,
       clickable: true,
     },
     
-    // Обработчики событий
+
     on: {
       init: function() {
         updateNavigationButtons(this);
@@ -70,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     
   breakpoints: {
-    // Адаптив для мобильных
+ 
     768: {
       slidesPerView: 1,
       centeredSlides: false
@@ -89,14 +88,14 @@ nextBtn.addEventListener('click', () => gallerySwiper.slideNext());
 
 function updateNavigationButtons(swiper) {
   
-  // Для кнопки "Назад"
+
   if (swiper.isBeginning) {
     prevBtn.classList.add('gallery-button--hidden');
   } else {
     prevBtn.classList.remove('gallery-button--hidden');
   }
   
-  // Для кнопки "Вперед"
+
   if (swiper.isEnd) {
     nextBtn.classList.add('gallery-button--hidden');
   } else {
@@ -105,7 +104,7 @@ function updateNavigationButtons(swiper) {
 }
 
 const bestsellerSwiper = new Swiper('.bestseller-swiper', {
-  // Основные параметры
+
   effect: "coverflow",
   grabCursor: true,
   centeredSlides: false,
@@ -114,8 +113,7 @@ const bestsellerSwiper = new Swiper('.bestseller-swiper', {
   slidesPerView: "auto",
   spaceBetween: 10,
 
-  
-  // Эффект coverflow
+
   coverflowEffect: {
     rotate: 0,
     stretch: 80,
@@ -124,21 +122,21 @@ const bestsellerSwiper = new Swiper('.bestseller-swiper', {
     slideShadows: true,
   },
   
-  // Навигация (исправленные селекторы)
+
   navigation: {
     nextEl: BSnextBtn,
     prevEl: BSprevBtn,
-    disabledClass: 'bestseller-swiper-button--disabled' // Добавляем класс для неактивных кнопок
+    disabledClass: 'bestseller-swiper-button--disabled' 
   },
   
-  // Отключаем пагинацию (если она не используется)
+
   pagination: {
     el: ".bestseller-swiper-pagination",
     enabled: false,
     clickable: true,
   },
   
-  // Обработчики событий
+
   on: {
     init: function() {
       updateBSNavigationButtons(this);
@@ -154,7 +152,7 @@ const bestsellerSwiper = new Swiper('.bestseller-swiper', {
   },
   
 breakpoints: {
-  // Адаптив для мобильных
+
   768: {
     slidesPerView: 1,
     centeredSlides: false
@@ -172,14 +170,14 @@ BSnextBtn.addEventListener('click', () => bestsellerSwiper.slideNext());
 
 function updateBSNavigationButtons(swiper) {
   
-  // Для кнопки "Назад"
+
   if (swiper.isBeginning) {
     BSprevBtn.classList.add('bestseller-button--hidden');
   } else {
     BSprevBtn.classList.remove('bestseller-button--hidden');
   }
   
-  // Для кнопки "Вперед"
+
   if (swiper.isEnd) {
     BSnextBtn.classList.add('bestseller-button--hidden');
   } else {
@@ -191,7 +189,7 @@ function updateBSNavigationButtons(swiper) {
 
 
 const recipeSwiper = new Swiper('.recipe-swiper', {
-  // Основные параметры
+
   effect: "coverflow",
   grabCursor: true,
   centeredSlides: false,
@@ -200,8 +198,6 @@ const recipeSwiper = new Swiper('.recipe-swiper', {
   slidesPerView: "auto",
   spaceBetween: 10,
 
-  
-  // Эффект coverflow
   coverflowEffect: {
     rotate: 0,
     stretch: 80,
@@ -210,21 +206,21 @@ const recipeSwiper = new Swiper('.recipe-swiper', {
     slideShadows: true,
   },
   
-  // Навигация (исправленные селекторы)
+
   navigation: {
     nextEl: RnextBtn,
     prevEl: RprevBtn,
-    disabledClass: 'recipe-swiper-button--disabled' // Добавляем класс для неактивных кнопок
+    disabledClass: 'recipe-swiper-button--disabled'
   },
   
-  // Отключаем пагинацию (если она не используется)
+
   pagination: {
     el: ".recipe-swiper-pagination",
     enabled: false,
     clickable: true,
   },
   
-  // Обработчики событий
+
   on: {
     init: function() {
       updateRNavigationButtons(this);
@@ -240,7 +236,7 @@ const recipeSwiper = new Swiper('.recipe-swiper', {
   },
   
 breakpoints: {
-  // Адаптив для мобильных
+
   768: {
     slidesPerView: 1,
     centeredSlides: false
@@ -258,20 +254,99 @@ RnextBtn.addEventListener('click', () => recipeSwiper.slideNext());
 
 function updateRNavigationButtons(swiper) {
   
-  // Для кнопки "Назад"
+
   if (swiper.isBeginning) {
     RprevBtn.classList.add('recipe-button--hidden');
   } else {
     RprevBtn.classList.remove('recipe-button--hidden');
   }
   
-  // Для кнопки "Вперед"
+
   if (swiper.isEnd) {
     RnextBtn.classList.add('recipe-button--hidden');
   } else {
     RnextBtn.classList.remove('recipe-button--hidden');
   }
 }
+
+
+
+
+
+document.querySelectorAll('.menu-item').forEach(button => {
+  button.addEventListener('click', function() {
+
+    document.querySelectorAll('.menu-item').forEach(btn => {
+      btn.classList.remove('active');
+    });
+    
+
+    this.classList.add('active');
+  });
+});
+
+
+
+
+
+
+document.getElementById("contacts-form").addEventListener('submit', function(e) {
+  e.preventDefault(); 
+  
+
+  const nameInput = document.getElementById('name');
+  const phoneInput = document.getElementById('phone');
+  const name = nameInput.value.trim();
+  const phone = phoneInput.value.trim();
+
+
+  if (name.length < 2 || name.length > 50) {
+      alert('Ошибка: имя должно содержать от 2 до 50 символов');
+      nameInput.focus();
+      return;
+  }
+
+
+  const phoneRegex = /^\+7\s?\(\d{3}\)\s?\d{3}-\d{2}-\d{2}$/;
+  if (!phoneRegex.test(phone)) {
+      alert('Ошибка: введите телефон в формате +7 (XXX) XXX-XX-XX');
+      phoneInput.focus();
+      return;
+  }
+
+  alert('Форма успешно отправлена!');
+  this.submit(); 
+});
+document.getElementById('phone').value = "+7"
+document.getElementById('phone').addEventListener('input', function(e) {
+  let x = e.target.value.replace(/\D/g, '').match(/(\d{0,1})(\d{0,3})(\d{0,3})(\d{0,2})(\d{0,2})/);
+  e.target.value = !x[2] ? '+7' : '+7 (' + x[2] + (x[3] ? ') ' + x[3] : '') + (x[4] ? '-' + x[4] : '') + (x[5] ? '-' + x[5] : '');
+});
+
+
+
+
+document.getElementById('back-to-top').addEventListener('click', function() {
+  window.scrollTo({
+      top: 0,
+      behavior: 'smooth' // Плавная прокрутка
+  });
+});
+
+// Показываем/скрываем кнопку при прокрутке
+window.addEventListener('scroll', function() {
+  const backToTopButton = document.getElementById('back-to-top');
+  if (window.pageYOffset > 300) {
+      backToTopButton.style.display = 'flex';
+  } else {
+      backToTopButton.style.display = 'none';
+  }
+});
+
+// Инициализация - скрываем кнопку при загрузке, если мы уже вверху
+document.addEventListener('DOMContentLoaded', function() {
+  const backToTopButton = document.getElementById('back-to-top');
+  backToTopButton.style.display = window.pageYOffset > 300 ? 'flex' : 'none';
+});
+
 })
-
-

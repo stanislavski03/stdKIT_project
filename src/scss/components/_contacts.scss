@@ -1,0 +1,164 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.contacts {
+    margin-left: 15vw;
+    margin-right: 15vw;
+
+    height: 90%;
+
+
+    @include text-block(null, null, #000, #000);
+
+    .blocks {
+        display: flex;
+        gap: 2vw;
+
+
+        .connect {
+            background-color: #fff;
+            width: 30%;
+            height: 55vh;
+            border-radius: 40px;
+            border: 1px solid;
+            border-color: #000;
+            gap: 1.5vh;
+            display: flex;
+            flex-direction: column;
+            padding: 3vh;
+
+            &__title {
+                font-size: 1.5vw;
+
+            }
+
+            .mini-blocks {
+                font-size: 0.8vw;
+                color: #000;
+                display: flex;
+                gap: 4vh;
+                flex-direction: column;
+
+                .address-block {
+                    display: flex;
+                    flex-wrap: wrap;
+                    flex-direction: column;
+                    gap: 2vh;
+                    color: #1C1C1C;
+
+                }
+
+                .phone-block {
+                    display: flex;
+                    flex-wrap: wrap;
+                    flex-direction: column;
+                    gap: 2vh;
+
+                    a {
+                        text-decoration: none;
+                        color: #1C1C1C;
+                    }
+                }
+
+                .shop-block {
+                    display: flex;
+                    flex-wrap: wrap;
+                    flex-direction: column;
+                    gap: 2vh;
+
+                    a {
+                        text-decoration: none;
+                        color: #1C1C1C;
+                    }
+
+                }
+
+            }
+
+            &__all-contacts {
+                text-decoration: underline dotted;
+                text-underline-offset: 10px;
+                color: #000;
+                font-size: 1vw;
+                margin-top: 3vh;
+            }
+        }
+
+        .contact-form {
+            background-color: #70CAF3;
+            width: 70%;
+            height: 55vh;
+            border-radius: 40px;
+            padding: 3vh;
+
+            h2 {
+                font-size: 2vw;
+                margin-bottom: 20px;
+                color: #000;
+            }
+
+            .form-group {
+                margin-bottom: 20px;
+                width: 100%;
+                font-size: 1vw;
+            }
+
+            label {
+                display: block;
+                font-weight: bold;
+                margin-bottom: 5px;
+            }
+
+            .input-block{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                gap: 20px;
+            }
+
+            input,
+            textarea {
+                padding: 10px;
+                border: none;
+                border-radius: 8px;
+                font-size: 0.8vw;
+                box-sizing: border-box;
+            }
+
+            textarea {
+                width: 100%;
+                height: 16vh;
+                resize: vertical;
+            }
+
+            input {
+                width: 100%;
+                height: 6vh;
+            }
+
+            .consent-text {
+                font-weight: 400;
+                font-size: 0.8vw;
+                color: #737373;
+                line-height: 120%;
+                letter-spacing: 0%;
+
+            }
+
+            .phone-input {
+                position: relative;
+            }
+
+            button {
+                height: 5vh;
+                margin-top: 2vh;
+                margin-bottom: 2vh;
+            }
+
+
+
+        }
+
+    }
+
+}

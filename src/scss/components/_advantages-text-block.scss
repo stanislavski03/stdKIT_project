@@ -7,6 +7,7 @@
     position: relative;
     top: 5vh;
     margin-left: 15vw;
+    max-width: 100%;
     
 
 
@@ -75,6 +76,7 @@
 }
 
 .ledies {
+    max-width: 100%;
     position:absolute;
 
     &__ledy1 {
