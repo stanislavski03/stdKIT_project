@@ -9,9 +9,20 @@
     margin-left: 15vw;
     
     
+    
+    
+    
 
     @include text-block(433px, 302px, #fff, #fff);
 
+    
+    @include respond-to('tablet') {
+        width: 300px;
+        &__title {
+            font-size: 40px;
+        }
+        
+    }
 
     button {
         width: 10vw;

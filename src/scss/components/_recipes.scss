@@ -32,10 +32,10 @@
     align-items: center;
 
     .slide-container {
-
+      display: block;
       margin-top: 5vh;
       width: 13vw;
-      height: 40vh;
+      height: 33vh;
       
 
       &:hover {
@@ -61,7 +61,7 @@
       transition: all 0.5s linear;
 
       span {
-        font-size: 1.5vw;
+        font-size: 24px;
         font-weight: 600;
         line-height: 120%;
         letter-spacing: 0%;
@@ -74,7 +74,7 @@
       text-align: left;
       line-height: 30px;
       padding: 10px;
-      font-size: 0.8vw;
+      font-size: 16px;
 
     }
 
@@ -88,7 +88,9 @@
   .recipe-image {
     display: block;
     width: 13vw;
-      height: 40vh;
+    min-width: 170px;
+    max-height: 300px;
+    height: 40vh;
     object-fit: cover;
     position: absolute;
     z-index: -2;
@@ -155,17 +157,17 @@
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 100%; // Нужное количество пикселей
+    width: 15vw; // Нужное количество пикселей
     background-color: #fff; // Цвет заливки
     z-index: 10;
   }
 
   &::before {
-    left: -100%; // Такой же размер как width
+    left: -15vw; // Такой же размер как width
   }
 
   &::after {
-    right: -100%; // Такой же размер как width
+    right: -15vw; // Такой же размер как width
   }
 }
 

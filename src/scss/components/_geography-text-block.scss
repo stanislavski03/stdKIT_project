@@ -6,6 +6,7 @@
     width: 98%;
     height: 664px;
     border-radius: 60px;
+    overflow: hidden;
 }
 
 .geography-text-block {
@@ -14,6 +15,7 @@
     position: relative;
     top: 5vh;
     margin-left: 15vw;
+
 
     @include text-block(546px, 210px, #fff, #fff);
 
@@ -93,7 +95,12 @@
         }
     }
 }
-
+.locations {
+    overflow: hidden;
+    @include respond-to('xxl') {
+        display: none;
+    }
+}
 .location {
     position: absolute;
     z-index: 2;
@@ -154,7 +161,7 @@
 .geography-fade {
     position: relative;
     width: 80%;
-    height: 10vh;
+    height: 15%;
     background: linear-gradient(0deg,rgba(50, 98, 172, 1) 0%, rgba(87, 199, 133, 0) 100%);
     top: 49%;
     left: 10%;

@@ -13,12 +13,16 @@
     .blocks {
         display: flex;
         gap: 2vw;
+        @include respond-to('desktop') {
+            flex-direction: column;
+            align-items: center;
+        }
 
 
         .connect {
             background-color: #fff;
             width: 30%;
-            height: 55vh;
+            height: 70%;
             border-radius: 40px;
             border: 1px solid;
             border-color: #000;
@@ -27,13 +31,20 @@
             flex-direction: column;
             padding: 3vh;
 
+            @include respond-to('desktop') {
+                width: 70%;
+            }
+
+            
+
             &__title {
-                font-size: 1.5vw;
+                font-size: 32px;
+                margin-top: 0;
 
             }
 
             .mini-blocks {
-                font-size: 0.8vw;
+                font-size: 16px;
                 color: #000;
                 display: flex;
                 gap: 4vh;
@@ -79,7 +90,7 @@
                 text-decoration: underline dotted;
                 text-underline-offset: 10px;
                 color: #000;
-                font-size: 1vw;
+                font-size: 20px;
                 margin-top: 3vh;
             }
         }
@@ -87,20 +98,21 @@
         .contact-form {
             background-color: #70CAF3;
             width: 70%;
-            height: 55vh;
+            height: 70%;
             border-radius: 40px;
             padding: 3vh;
 
             h2 {
-                font-size: 2vw;
+                font-size: 32px;
                 margin-bottom: 20px;
+                margin-top: 0;
                 color: #000;
             }
 
             .form-group {
                 margin-bottom: 20px;
                 width: 100%;
-                font-size: 1vw;
+                font-size: 16px;
             }
 
             label {
@@ -121,7 +133,7 @@
                 padding: 10px;
                 border: none;
                 border-radius: 8px;
-                font-size: 0.8vw;
+                font-size: 16px;
                 box-sizing: border-box;
             }
 
@@ -138,7 +150,7 @@
 
             .consent-text {
                 font-weight: 400;
-                font-size: 0.8vw;
+                font-size: 16px;
                 color: #737373;
                 line-height: 120%;
                 letter-spacing: 0%;

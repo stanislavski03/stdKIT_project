@@ -11,39 +11,81 @@
     
 
 
+
     @include text-block(546px, 210px, #fff, #fff);
 
     &__title {
         line-height: 100%;
+
+        @include respond-to('xxl') {
+            font-size: 40px;
+        }
     }
 
     &__advantages-blocks {
 
         display: grid;
         grid-template-columns: 1fr 2fr 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas:
+            "first second second third";
         justify-content: space-between;
         gap: 30px;
+        justify-items: center;
+
+        @include respond-to('xxl') {
+            margin-right: 15vw;
+        }
+
+        @include respond-to('xxl') {
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            grid-template-areas:
+                "first third"
+                "second second";
+        }
 
 
-        [class^="advantages-blocks__advantage-"] {
-            min-height: 50px;
+
+        &__advantage-first {
             background: #fff;
             border-radius: 40px;
             padding: 20px;
-            display: grid;
-            align-items: center;
-            justify-content: center;
-            text-align: left;
-            font-size: 0.8vw;
+            grid-area: first;
+            align-items: baseline;
+            gap: 10px;
+            padding: 15px;
 
+
+            &__img {
+                grid-area: image;
+                align-self: start;
+            }
+
+            img {
+                max-width: 40px;
+                /* Размер изображения */
+                height: 40px;
+                display: block;
+                padding: 15px;
+            }
+
+
+
+            &__title {
+                grid-area: title;
+                grid-column: 1 / -1;
+
+                /* Текст на всю ширину */
+            }
         }
 
-        &__advantage-first {
-            display: grid;
-            grid-template-areas:
-                "image null"
-                "title title";
-            grid-template-columns: auto 1fr;
+        &__advantage-second {
+            background: #fff;
+            border-radius: 40px;
+            padding: 20px;
+            grid-area: second;
+            align-items: baseline;
             gap: 10px;
             padding: 15px;
 
@@ -53,12 +95,46 @@
             }
 
             img {
-                max-width: 50px;
+                max-width: 40px;
                 /* Размер изображения */
-                height: 50px;
+                height: 40px;
                 display: block;
                 padding: 15px;
             }
+
+
+
+            &__title {
+                grid-area: title;
+                grid-column: 1 / -1;
+
+                /* Текст на всю ширину */
+            }
+        }
+
+        &__advantage-third {
+            background: #fff;
+            border-radius: 40px;
+            padding: 20px;
+            grid-area: third;
+            align-items: baseline;
+            gap: 10px;
+            padding: 15px;
+
+            &__img {
+                grid-area: image;
+                align-self: start;
+            }
+
+            img {
+                max-width: 40px;
+                /* Размер изображения */
+                height: 40px;
+                display: block;
+                padding: 15px;
+            }
+
+
 
             &__title {
                 grid-area: title;
@@ -77,18 +153,33 @@
 
 .ledies {
     max-width: 100%;
-    position:absolute;
+    position: absolute;
 
     &__ledy1 {
         position: absolute;
-        top:77px;
-        left: 1106px;
+        top: 77px;
+        left: 1050px;
         z-index: 2;
     }
+
     &__ledy2 {
         position: absolute;
-        top:77px;
-        left: 1220px;
+        top: 77px;
+        left: 1165px;
         z-index: 2;
+    }
+
+    @include respond-to('xxl2') {
+        &__ledy1 {
+            left: 750px;
+        }
+
+        &__ledy2 {
+            left: 865px;
+        }
+    }
+
+    @include respond-to('xxl') {
+        display: none;
     }
 }

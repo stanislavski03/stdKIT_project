@@ -60,7 +60,7 @@
       transition: all 0.5s linear;
 
       span {
-        font-size: 1vw;
+        font-size: 19px;
         font-weight: 600;
         line-height: 120%;
         letter-spacing: 0%;
@@ -84,7 +84,7 @@
 
         color: gray;
         font-weight: 400;
-        font-size: 0.8vw;
+        font-size: 16px;
         line-height: 150%;
         letter-spacing: 0%;
         text-align: center;
@@ -96,7 +96,7 @@
     &-patterns {
       text-align: left;
       line-height: 30px;
-      font-size: 0.8vw;
+      font-size: 16px;
 
     }
 
@@ -179,16 +179,16 @@
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 100%; // Нужное количество пикселей
+    width: 15vw; // Нужное количество пикселей
     background-color: #fff; // Цвет заливки
     z-index: 10;
   }
 
   &::before {
-    left: -100%; // Такой же размер как width
+    left: -15vw; // Такой же размер как width
   }
 
   &::after {
-    right: -100%; // Такой же размер как width
+    right: -15vw; // Такой же размер как width
   }
 }

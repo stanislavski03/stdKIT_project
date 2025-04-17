@@ -8,12 +8,15 @@
     
     &--blue {
         background-color: $section-blue-color;
-        height: 800px;
+        height: 80vh;
     }
 
     &--white {
         background-color: white;
         height: 798px;
+        @include respond-to('desktop') {
+            height: 1450px;
+        }
     }
 
     &--green {
@@ -23,6 +26,7 @@
         height: 786px;
         border-radius: 60px;
         display: flex;
+        overflow: hidden;
         
     }
     

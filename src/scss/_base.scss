@@ -1,5 +1,12 @@
 @use 'variables' as *;
 
+html {
+    scroll-behavior: smooth; /* Включить плавную прокрутку для всей страницы */
+    :target {
+        scroll-margin-top: 100px; 
+    }
+}
+
 body {
     //overflow-x:hidden;
     margin: 0;
@@ -43,12 +50,55 @@ body {
 }
 
 /* Скрываем кнопку на очень маленьких экранах */
-@media (max-width: 400px) {
-    #back-to-top {
-        width: 40px;
-        height: 40px;
-        font-size: 20px;
-        left: 10px;
-        bottom: 10px;
+// @media (max-width: 400px) {
+//     #back-to-top {
+//         width: 40px;
+//         height: 40px;
+//         font-size: 20px;
+//         left: 10px;
+//         bottom: 10px;
+//     }
+// }
+
+
+/* Добавьте эти стили в ваш основной CSS */
+@media (max-width: 768px) {
+    body.lock {
+      overflow: hidden;
     }
-}
+    
+    .header__phone {
+      display: none !important;
+    }
+    
+    .header__dropdown-btn img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    #back-to-top {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+                left: 10px;
+                bottom: 10px;
+            }
+    .header__container {
+      padding: 0 10px;
+    }
+    
+    .header__logo-img {
+      height: 40px !important;
+      width: 40px !important;
+    }
+  }
+
+
+  .lock-scroll {
+    overflow: hidden;
+    height: 100vh;
+    position: fixed;
+    width: 100%;
+  }
