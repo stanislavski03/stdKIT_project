@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const { watch } = require('fs');
 
 module.exports = {
   entry: './src/js/main.js',
@@ -26,7 +27,7 @@ module.exports = {
         use: ['style-loader', 'css-loader']
       },
       {
-        test: /\.(png|jpe?g|gif|svg|webp)$/i,
+        test: /\.(png|jpg|jpe?g|gif|svg|webp)$/i,
         type: 'asset/resource',
         generator: {
           filename: 'img/[name][hash][ext][query]'
@@ -58,10 +59,12 @@ module.exports = {
         }
       ]
     })
+
   ],
   devServer: {
     static: {
       directory: path.join(__dirname, 'dist'),
+      watch: true,
     },
     hot: true,
     open: true,

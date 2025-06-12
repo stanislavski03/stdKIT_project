@@ -1,52 +1,63 @@
 @use 'variables' as *;
 
 html {
-    scroll-behavior: smooth; /* Включить плавную прокрутку для всей страницы */
-    :target {
-        scroll-margin-top: 100px; 
-    }
+  scroll-behavior: smooth;
+
+  /* Включить плавную прокрутку для всей страницы */
+  :target {
+    scroll-margin-top: 100px;
+  }
 }
 
 body {
-    //overflow-x:hidden;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    width: 100%;
-    min-height: 100%;
-    max-width: 100%;
-    display: flex;
-    flex-direction: column;
+  //overflow-x:hidden;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
 
+}
+
+.content {
+  display: flex;
+  margin-left: 15vw;
+  margin-right: 15vw;
+  flex-grow: 1;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 #back-to-top {
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    width: 50px;
-    height: 50px;
-    background-color: #333;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    opacity: 0.7;
-    transition: opacity 0.3s;
-    z-index: 999;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+  z-index: 999;
 }
 
 #back-to-top:hover {
-    opacity: 1;
-    background-color: #555;
+  opacity: 1;
+  background-color: #555;
 }
 
 #back-to-top::after {
-    content: "↑";
+  content: "↑";
 }
 
 /* Скрываем кнопку на очень маленьких экранах */
@@ -63,42 +74,43 @@ body {
 
 /* Добавьте эти стили в ваш основной CSS */
 @media (max-width: 768px) {
-    body.lock {
-      overflow: hidden;
-    }
-    
-    .header__phone {
-      display: none !important;
-    }
-    
-    .header__dropdown-btn img {
-      width: 20px;
-      height: 20px;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    #back-to-top {
-                width: 40px;
-                height: 40px;
-                font-size: 20px;
-                left: 10px;
-                bottom: 10px;
-            }
-    .header__container {
-      padding: 0 10px;
-    }
-    
-    .header__logo-img {
-      height: 40px !important;
-      width: 40px !important;
-    }
-  }
-
-
-  .lock-scroll {
+  body.lock {
     overflow: hidden;
-    height: 100vh;
-    position: fixed;
-    width: 100%;
   }
+
+  .header__phone {
+    display: none !important;
+  }
+
+  .header__dropdown-btn img {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  #back-to-top {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    left: 10px;
+    bottom: 10px;
+  }
+
+  .header__container {
+    padding: 0 10px;
+  }
+
+  .header__logo-img {
+    height: 40px !important;
+    width: 40px !important;
+  }
+}
+
+
+.lock-scroll {
+  overflow: hidden;
+  height: 100vh;
+  position: fixed;
+  width: 100%;
+}

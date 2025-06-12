@@ -4,31 +4,44 @@
 .section {
     width: 100%;
     z-index: 1;
-    
-    
+
+
+
     &--blue {
-        background-color: $section-blue-color;
+        background-color: rgba($section-blue-color, 0.8);
         height: 80vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+
+
+
+
     }
+
+
+
 
     &--white {
         background-color: white;
         height: 798px;
+
         @include respond-to('desktop') {
             height: 1450px;
         }
     }
 
     &--green {
-        background-color: $section-green-color;
+        background-color: rgba($section-green-color, 0.8);
         margin: 0 auto;
         width: 98%;
         height: 786px;
         border-radius: 60px;
         display: flex;
         overflow: hidden;
-        
+
     }
-    
-    
+
+
 }

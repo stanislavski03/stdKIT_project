@@ -8,7 +8,7 @@
     top: 5vh;
     margin-left: 15vw;
     max-width: 100%;
-    
+
 
 
 
@@ -24,25 +24,13 @@
 
     &__advantages-blocks {
 
-        display: grid;
-        grid-template-columns: 1fr 2fr 1fr;
-        grid-template-rows: 1fr;
-        grid-template-areas:
-            "first second second third";
-        justify-content: space-between;
-        gap: 30px;
+        display: flex;
         justify-items: center;
+        gap: 10px;
 
         @include respond-to('xxl') {
-            margin-right: 15vw;
-        }
-
-        @include respond-to('xxl') {
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: 1fr 1fr;
-            grid-template-areas:
-                "first third"
-                "second second";
+            flex-direction: row;
+            flex-wrap: wrap;
         }
 
 
@@ -50,97 +38,58 @@
         &__advantage-first {
             background: #fff;
             border-radius: 40px;
-            padding: 20px;
-            grid-area: first;
             align-items: baseline;
             gap: 10px;
-            padding: 15px;
-
-
-            &__img {
-                grid-area: image;
-                align-self: start;
-            }
 
             img {
-                max-width: 40px;
-                /* Размер изображения */
-                height: 40px;
                 display: block;
-                padding: 15px;
             }
 
+            span {
 
+                position: absolute;
+                top: 554px;
+                z-index: 1000;
+                padding: 5px;
 
-            &__title {
-                grid-area: title;
-                grid-column: 1 / -1;
-
-                /* Текст на всю ширину */
             }
         }
 
         &__advantage-second {
             background: #fff;
             border-radius: 40px;
-            padding: 20px;
-            grid-area: second;
             align-items: baseline;
             gap: 10px;
-            padding: 15px;
-
-            &__img {
-                grid-area: image;
-                align-self: start;
-            }
+            ;
 
             img {
-                max-width: 40px;
-                /* Размер изображения */
-                height: 40px;
                 display: block;
-                padding: 15px;
             }
 
-
-
-            &__title {
-                grid-area: title;
-                grid-column: 1 / -1;
-
-                /* Текст на всю ширину */
+            span {
+                position: absolute;
+                top: 554px;
+                z-index: 1000;
+                padding: 5px;
             }
         }
 
         &__advantage-third {
             background: #fff;
             border-radius: 40px;
-            padding: 20px;
-            grid-area: third;
             align-items: baseline;
             gap: 10px;
-            padding: 15px;
 
-            &__img {
-                grid-area: image;
-                align-self: start;
-            }
 
             img {
-                max-width: 40px;
-                /* Размер изображения */
-                height: 40px;
                 display: block;
-                padding: 15px;
             }
 
-
-
-            &__title {
-                grid-area: title;
-                grid-column: 1 / -1;
-
-                /* Текст на всю ширину */
+            span {
+                position: absolute;
+                top: 554px;
+                z-index: 1000;
+                padding: 5px;
             }
         }
 
@@ -171,15 +120,58 @@
 
     @include respond-to('xxl2') {
         &__ledy1 {
-            left: 750px;
+            left: 800px;
         }
 
         &__ledy2 {
-            left: 865px;
+            left: 915px;
         }
     }
 
     @include respond-to('xxl') {
         display: none;
     }
+}
+
+.bg-advantages {
+    position: absolute;
+    margin: 0 auto;
+    width: 97%;
+    margin-left: 1.3vw;
+    border-radius: 60px;
+    display: flex;
+    height: 786px;
+    filter: grayscale(1) blur(5px);
+    background-attachment: fixed;
+    z-index: -1;
+}
+
+.mask {
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    left: 18vw;
+    top: 159px;
+    margin-right: 5vw;
+
+    @include respond-to('lg') {
+        display: none;
+    }
+    @include respond-to('xxl2') {
+        left: 16vw;
+    }
+
+}
+
+.vector {
+    z-index: 0;
+    position: absolute;
+    top: 200px;
+    left: 30vw;
+}
+
+.adv-img-container {
+    position: relative;
+    width: 98%;
+    height: 786px;
 }

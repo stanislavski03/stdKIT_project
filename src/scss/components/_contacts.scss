@@ -13,6 +13,7 @@
     .blocks {
         display: flex;
         gap: 2vw;
+        justify-content: space-between;
         @include respond-to('desktop') {
             flex-direction: column;
             align-items: center;
@@ -21,12 +22,12 @@
 
         .connect {
             background-color: #fff;
-            width: 30%;
-            height: 70%;
+            width: 300px;
+            height: 493px;
             border-radius: 40px;
             border: 1px solid;
             border-color: #000;
-            gap: 1.5vh;
+            gap: 0.5px;
             display: flex;
             flex-direction: column;
             padding: 3vh;
@@ -96,11 +97,11 @@
         }
 
         .contact-form {
-            background-color: #70CAF3;
-            width: 70%;
-            height: 70%;
+            background-color: #b5e5fc;
+            width: 650px;
+            height: 493px;
             border-radius: 40px;
-            padding: 3vh;
+            padding: 24px;
 
             h2 {
                 font-size: 32px;
@@ -135,6 +136,8 @@
                 border-radius: 8px;
                 font-size: 16px;
                 box-sizing: border-box;
+                position: relative;
+                z-index: 1;
             }
 
             textarea {
@@ -154,6 +157,8 @@
                 color: #737373;
                 line-height: 120%;
                 letter-spacing: 0%;
+                position: relative;
+                z-index: 1;
 
             }
 
@@ -173,4 +178,18 @@
 
     }
 
+}
+
+.Vector-contacts {
+    z-index: 0;
+    position: absolute;
+    top: 1px;
+    left: 307px;
+    border-radius: 40px;
+}
+
+.con-img-container {
+    position: relative;
+    width: 98%;
+    height: 664px;
 }

@@ -9,48 +9,75 @@
 
 <body>
   <header class="header" id="header">
-    <div class="header__container">
+    <div class="content header__container">
       <a href="/" class="header__logo">
         <img src="./img/logo.svg" alt="logo" class="header__logo-img">
       </a>
-      
-      <button class="header__mobile-burger" aria-label="Меню">
+
+      <button type="button" class="header__mobile-burger" aria-label="Меню">
         <span></span>
         <span></span>
         <span></span>
       </button>
-      
+
       <nav class="header__nav">
         <div class="header__dropdown">
-          <button class="header__dropdown-btn">
+          <button class="header__dropdown-btn js-dropdown-btn">
             <img src="./img/catalog.svg" alt="Каталог">Каталог
-            <div class="white-circle">96</div>
+            <div class="white-circle"></div>
           </button>
-          <ul class="header__dropdown-content">
-            <li><a href="#" class="header__link">Товар 1</a></li>
-            <li><a href="#" class="header__link">Товар 2</a></li>
+          <ul class="header__dropdown-content js-dropdown-content">
+            <li><a href="#" class="header__link-drp">Товар 1</a></li>
+            <li><a href="#" class="header__link-drp">Товар 2</a></li>
           </ul>
         </div>
-  
+
         <a href="#" class="header__link">Главная</a>
-        <a href="#" class="header__link">О заводе</a>
-        <a href="#" class="header__link">Где купить</a>
-        <a href="#" class="header__link">Контакты</a>
+        <a href="#advantages" class="header__link">О заводе</a>
+        <a href="#geography" class="header__link">Где купить</a>
+        <a href="#contacts" class="header__link">Контакты</a>
       </nav>
-      
+
       <div class="header__phone">
         <a href="tel:+79649061713" class="header__phone-link">8 (964) 906-17-13</a>
         <a href="#" class="header__phone-text">Обратная связь</a>
       </div>
     </div>
   </header>
+  <div class="header-img-container">
+  <img src="./img/header/bg.jpg" alt="bg" class="bg">
+
   <section class="section section--blue">
-    <section class="text-block">
-      <h2 class="text-block__title">ЗАО «Молкомбинат «Адыгейский»</h2>
-      <p class="text-block__description">Одно из ведущих предприятий промышленности Республики Адыгея</p>
-      <button class="button button--primary">Подробнее</button>
-    </section>
+    <div class="content">
+      <img src="./img/header/Union.svg" alt="union" class="union">
+      <img src="./img/header/vector.svg" alt="Vector" class="Vector">
+      <section class="text-block">
+        <h2 class="text-block__title">ЗАО «Молкомбинат «Адыгейский»</h2>
+        <p class="text-block__description">Одно из ведущих предприятий промышленности Республики Адыгея</p>
+        <button class="button button--primary">Подробнее</button>
+      </section>
+
+      <section class="products-block">
+        <div class="products-block--first-blocks">
+          <div class="products-block--first-blocks__block1">
+            <img class="products-block--first-blocks__img" src="./img/blue-section/1.svg" alt="">
+          </div>
+          <div class="products-block--first-blocks__block2">
+            <img class="products-block--first-blocks__img" src="./img/blue-section/2.svg" alt="">
+          </div>
+        </div>
+        <div class="products-block--second-blocks">
+          <div class="products-block--second-blocks__block1">
+            <img class="products-block--first-blocks__img" src="./img/blue-section/3.svg" alt="">
+          </div>
+          <div class="products-block--second-blocks__block2">
+            <img class="products-block--first-blocks__img" src="./img/blue-section/4.svg" alt="">
+          </div>
+        </div>
+      </section>
+    </div>
   </section>
+  </div>
 
 
   <section class="gallery-container" id="catalog">
@@ -125,7 +152,14 @@
     <div class="swiper-fade-left"></div>
     <div class="swiper-fade-right"></div>
   </section>
+
+<div class="adv-img-container">
+<img src="./img/advantages/bg.jpg" alt="bg" class="bg-advantages">
+
+  
   <section class="section section--green">
+    <img src="./img/advantages/mask.svg" alt="mask" class="mask">
+    <img src="./img/advantages/Vector.svg" alt="vector" class="vector">
 
     <section class="advantages-text-block" id="advantages">
       <h2 class="advantages-text-block__title">традиционная рецептура и вклад в здоровое будущее поколений</h2>
@@ -133,18 +167,9 @@
         «Майкопская молочная продукция»: молоко, кефир, сметана, творог, ряженка, айран, которые отличаются небольшим
         сроком годности.</p>
       <section class="advantages-text-block__advantages-blocks">
-        <div class="advantages-text-block__advantages-blocks__advantage-first">
-          <img src="./img/advantages/1.svg" alt="adv1" class="advantages-blocks__advantage-first__img">
-          <div class="advantages-block__advantage-first__title">Экологическая чистота</div>
-        </div>
-        <div class="advantages-text-block__advantages-blocks__advantage-second">
-          <img src="./img/advantages/2.svg" alt="adv2" class="advantages-blocks__advantage-first__img">
-          <div class="advantages-block__advantage-second__title">Традиционные технологии производства</div>
-        </div>
-        <div class="advantages-text-block__advantages-blocks__advantage-third">
-          <img src="./img/advantages/3.svg" alt="adv3" class="advantages-blocks__advantage-first__img">
-          <div class="advantages-block__advantage-third__title">Натуральные ингредиенты</div>
-        </div>
+        <img src="./img/advantages/111.svg" alt="adv1">
+        <img src="./img/advantages/222.svg" alt="adv2">
+        <img src="./img/advantages/333.svg" alt="adv3">
       </section>
 
     </section>
@@ -155,6 +180,7 @@
     </section>
 
   </section>
+  </div>
 
 
   <section class="bestseller-container">
@@ -393,10 +419,11 @@
 
   </section>
 
-
-
+<div class="geo-img-container">
+  <img src="./img/header/bg.jpg" alt="bg" class="bg-geo">
   <section class="section section--blue geography_section">
-
+    <img src="./img/geography/mask.svg" alt="mask" class="mask-geo">
+    <img src="./img/geography/vector.svg" alt="Vector" class="Vector-geo">
     <section class="geography-text-block" id="geography">
       <h2 class="geography-text-block__title">география продаж</h2>
       <p class="geography-text-block__description">Вы сможете наши продукты в таких регионах: Астраханская область,
@@ -429,24 +456,15 @@
 
         </div>
       </section>
-      <section class="locations">
-        <img src="./img/geography/locations.svg" alt="location" class="location">
-        <img src="./img/geography/pin.svg" class="pin1" alt="pin">
-        <img src="./img/geography/pin.svg" class="pin2" alt="pin">
-        <img src="./img/geography/pin.svg" class="pin3" alt="pin">
-        <img src="./img/geography/pin.svg" class="pin4" alt="pin">
-        <img src="./img/geography/pin.svg" class="pin5" alt="pin">
-        <img src="./img/geography/pin.svg" class="pin6" alt="pin">
-        <img src="./img/geography/pin.svg" class="pin7" alt="pin">
-        <img src="./img/geography/pin.svg" class="pin8" alt="pin">
-
-      </section>
+        <img src="./img/geography/geo.svg" alt="location" class="location">
     </section>
     <div class="geography-fade"></div>
   </section>
+  </div>
 
 
   <section class="section section--white">
+    
     <section class="contacts" id="contacts">
       <h2 class="contacts__title">КОНТАКТЫ</h2>
       <div class="blocks">
@@ -473,6 +491,8 @@
           </div>
           <a href="#" class="connect__all-contacts">Все контакты</a>
         </section>
+        <div class="con-img-container">
+    <img src="./img/contacts/vector.svg" alt="Vector" class="Vector-contacts">
         <section class="contact-form">
           <h2>Напишите нам</h2>
 
@@ -499,10 +519,13 @@
             <p class="consent-text">Отправляя форму, Вы даете согласие на обработку Ваших персональных данных.</p>
           </form>
         </section>
+        </div>
       </div>
 
     </section>
+    
   </section>
+
 
 
   <section class="map" id="map"></section>
@@ -531,7 +554,7 @@
           </div>
         </section>
         <section class="hrefs_blocks">
-          
+
           <div class="navigation-block">
             <h2 class="hrefs_blocks__title">Навигация</h2>
             <span><a href="#header">Главная</a></span>
@@ -541,8 +564,8 @@
             <span><a href="#">Вакансии</a></span>
             <span><a href="#contacts">Контакты</a></span>
           </div>
-          
-          <div class="products-block">
+
+          <div class="product-block">
             <h2 class="hrefs_blocks__title">Продукция</h2>
             <span><a href="#">Айран</a></span>
             <span><a href="#">Мацони</a></span>
@@ -552,7 +575,7 @@
             <span><a href="#">Ряженка</a></span>
             <span><a href="#" class="show_all">Смотреть всё</a></span>
           </div>
-          
+
           <div class="contacts-block">
             <h2 class="hrefs_blocks__title">Контакты</h2>
             <div class="address-block">
@@ -576,7 +599,7 @@
 
         </section>
       </div>
-      
+
     </section>
     <div class="underfooter">
       <div class="gost_info">
@@ -597,6 +620,10 @@
 
   <button id="back-to-top" title="Вернуться наверх"></button>
   <script src="./js/main.js"></script>
+  <script src="./js/header.js"></script>
+  <script src="./js/swiper.js"></script>
+  <script src="./js/contacts.js"></script>
+  <script src="./js/map.js"></script>
   <script src="https://api-maps.yandex.ru/2.1/?apikey=1e2f114a-44ca-4b54-a7ff-0a60f25da48c&lang=ru_RU"
     type="text/javascript"></script>
 </body>
