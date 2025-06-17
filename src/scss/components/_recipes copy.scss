@@ -1,0 +1,216 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.recipe-container {
+  height: 757px;
+  position: relative;
+  margin-left: 15vw;
+  margin-right: 15vw;
+  z-index: 3;
+  background-color: #fff;
+
+
+
+  @include text-block(null, null, #000, #000);
+
+
+
+  .recipe-swiper {
+    width: 50%;
+    height: 50%;
+    padding: 0 30px;
+  }
+
+  .recipe-swiper-wrapper {
+    align-items: center;
+  }
+
+
+  .recipe-swiper-slide {
+    aspect-ratio: 3/4;
+
+    align-items: center;
+
+    .slide-container {
+      display: block;
+      margin-top: 5vh;
+      width: 13vw;
+      height: 33vh;
+      
+
+      &:hover {
+        transform: scale(1.05);
+        border: 1px solid;
+        border: none;
+        border-radius: 40px;
+        -webkit-box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.2);
+        -moz-box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.2);
+        box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+      }
+    }
+
+    &-title {
+      position: relative;
+      bottom: -10px;
+      left: 50%;
+      transform: translate(-50%, -20%);
+      -ms-transform: translate(-50%, -20%);
+      text-align: left;
+      padding: 10px 18px;
+      transition: all 0.5s linear;
+
+      span {
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 120%;
+        letter-spacing: 0%;
+        vertical-align: middle;
+      }
+    }
+
+
+    &-patterns {
+      text-align: left;
+      line-height: 30px;
+      padding: 10px;
+      font-size: 16px;
+
+    }
+
+    &.recipe-swiper-slide-active {
+      opacity: 1;
+    }
+  }
+
+
+  
+  .recipe-image {
+    display: block;
+    width: 13vw;
+    min-width: 170px;
+    max-height: 300px;
+    height: 40vh;
+    object-fit: cover;
+    position: absolute;
+    z-index: -2;
+    border-radius: 40px;
+
+    
+  }
+
+
+  .recipe-button {
+
+    &-prev,
+    &-next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 40px;
+      background: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      cursor: pointer;
+      z-index: 11;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      border: none;
+      outline: none;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+
+      &:hover {
+        background: #f5f5f5;
+      }
+
+
+    }
+
+    &-prev {
+      left: 5px;
+    }
+
+    &-next {
+      right: 5px;
+    }
+
+    &--disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    &--hidden {
+      display: none;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+  }
+
+  &::before,
+  &::after {
+    max-width: 100%;
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 15vw; // Нужное количество пикселей
+    background-color: #fff; // Цвет заливки
+    z-index: 10;
+  }
+
+  &::before {
+    left: -15vw; // Такой же размер как width
+  }
+
+  &::after {
+    right: -15vw; // Такой же размер как width
+  }
+}
+
+
+.menu-container {
+  width: 100%;
+  overflow-x: auto;
+  padding: 10px 0;
+  
+  .menu {
+    display: flex;
+    gap: 8px;
+    padding: 0 16px;
+    
+    .menu-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 20px;
+      background-color: #f5f5f5;
+      color: #333;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+      
+      .menu-icon {
+        width: 16px;
+        height: 16px;
+        // Здесь можно добавить background-image для иконок
+      }
+      
+      @include hover-effect(#f5f5f5);
+      
+      &.active {
+        background-color: #76B72A;
+        color: white;
+        
+        @include hover-effect(#76B72A);
+      }
+    }
+  }
+}

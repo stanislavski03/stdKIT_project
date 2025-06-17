@@ -13,90 +13,60 @@
 
   @include text-block(null, null, #000, #000);
 
-
-
   .recipe-swiper {
-    width: 50%;
-    height: 50%;
-    padding: 0 30px;
-  }
 
-  .recipe-swiper-wrapper {
-    align-items: center;
-  }
+    &__wrapper {}
+
+    &__slide {
+
+      .slide-container {
+
+        &:hover {
+          cursor: pointer;
+          transform: scale(0.95);
+        }
 
 
-  .recipe-swiper-slide {
-    aspect-ratio: 3/4;
 
-    align-items: center;
+        &__image-block {
 
-    .slide-container {
-      display: block;
-      margin-top: 5vh;
-      width: 13vw;
-      height: 33vh;
-      
 
-      &:hover {
-        transform: scale(1.05);
-        border: 1px solid;
-        border: none;
-        border-radius: 40px;
-        -webkit-box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.2);
-        -moz-box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.2);
-        box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.2);
-        cursor: pointer;
+          &--block1 {
+            background-color: lightblue;
+            max-width: 285px;
+            max-height: 403px;
+            border-radius: 40px;
+          }
+
+          &--block2 {
+            background-color: lightgreen;
+            max-width: 285px;
+            max-height: 403px;
+            border-radius: 40px;
+          }
+
+          &--block3 {
+            background-color: pink;
+            max-width: 285px;
+            max-height: 403px;
+            border-radius: 40px;
+          }
+
+          &--block4 {
+            background-color: rgb(252, 211, 151);
+            max-width: 285px;
+            max-height: 403px;
+            border-radius: 40px;
+          }
+
+
+
+          .recipe-image {
+            max-width: 100%;
+          }
+        }
       }
     }
-
-    &-title {
-      position: relative;
-      bottom: -10px;
-      left: 50%;
-      transform: translate(-50%, -20%);
-      -ms-transform: translate(-50%, -20%);
-      text-align: left;
-      padding: 10px 18px;
-      transition: all 0.5s linear;
-
-      span {
-        font-size: 24px;
-        font-weight: 600;
-        line-height: 120%;
-        letter-spacing: 0%;
-        vertical-align: middle;
-      }
-    }
-
-
-    &-patterns {
-      text-align: left;
-      line-height: 30px;
-      padding: 10px;
-      font-size: 16px;
-
-    }
-
-    &.recipe-swiper-slide-active {
-      opacity: 1;
-    }
-  }
-
-
-  
-  .recipe-image {
-    display: block;
-    width: 13vw;
-    min-width: 170px;
-    max-height: 300px;
-    height: 40vh;
-    object-fit: cover;
-    position: absolute;
-    z-index: -2;
-    border-radius: 40px;
-
-    
   }
 
 
@@ -176,12 +146,12 @@
   width: 100%;
   overflow-x: auto;
   padding: 10px 0;
-  
+
   .menu {
     display: flex;
     gap: 8px;
     padding: 0 16px;
-    
+
     .menu-item {
       display: flex;
       align-items: center;
@@ -196,19 +166,19 @@
       cursor: pointer;
       transition: all 0.3s ease;
       white-space: nowrap;
-      
+
       .menu-icon {
         width: 16px;
         height: 16px;
         // Здесь можно добавить background-image для иконок
       }
-      
+
       @include hover-effect(#f5f5f5);
-      
+
       &.active {
         background-color: #76B72A;
         color: white;
-        
+
         @include hover-effect(#76B72A);
       }
     }

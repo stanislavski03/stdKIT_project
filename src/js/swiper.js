@@ -24,10 +24,11 @@ document.addEventListener('DOMContentLoaded', () => {
     centeredSlides: false,
     initialSlide: 0,
     speed: 600,
-    slidesPerView: "auto",
-    spaceBetween: 100,
+    slidesPerView: 1,
+    spaceBetween: 50,
     clipToSide: true,
     watchSlidesVisibility: true,
+    loop: true,
 
 
     coverflowEffect: {
@@ -48,18 +49,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     pagination: {
       el: ".swiper-pagination",
-      enabled: false,
+      enabled: true,
       clickable: true,
     },
 
 
     on: {
-      init: function () {
-        updateNavigationButtons(this);
-      },
-      slideChange: function () {
-        updateNavigationButtons(this);
-      },
+      // init: function () {
+      //   updateNavigationButtons(this);
+      // },
+      // slideChange: function () {
+      //   updateNavigationButtons(this);
+      // },
       click(event) {
         if (this.clickedIndex !== undefined) {
           this.slideTo(this.clickedIndex);
@@ -69,12 +70,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     breakpoints: {
 
-      768: {
-        slidesPerView: 1,
-        centeredSlides: false
-      },
-      1024: {
+      // 768: {
+      //   slidesPerView: 1,
+      //   centeredSlides: false
+      // },
+      1200: {
         slidesPerView: 2
+      },
+      1700: {
+        slidesPerView: 3
       }
     }
 
@@ -85,32 +89,36 @@ document.addEventListener('DOMContentLoaded', () => {
   prevBtn.addEventListener('click', () => gallerySwiper.slidePrev());
   nextBtn.addEventListener('click', () => gallerySwiper.slideNext());
 
-  function updateNavigationButtons(swiper) {
+  // function updateNavigationButtons(swiper) {
 
 
-    if (swiper.isBeginning) {
-      prevBtn.classList.add('gallery-button--hidden');
-    } else {
-      prevBtn.classList.remove('gallery-button--hidden');
-    }
+  //   if (swiper.isBeginning) {
+  //     prevBtn.classList.add('gallery-button--hidden');
+  //   } else {
+  //     prevBtn.classList.remove('gallery-button--hidden');
+  //   }
 
 
-    if (swiper.isEnd) {
-      nextBtn.classList.add('gallery-button--hidden');
-    } else {
-      nextBtn.classList.remove('gallery-button--hidden');
-    }
-  }
+  //   if (swiper.isEnd) {
+  //     nextBtn.classList.add('gallery-button--hidden');
+  //   } else {
+  //     nextBtn.classList.remove('gallery-button--hidden');
+  //   }
+  // }
 
   const bestsellerSwiper = new Swiper('.bestseller-swiper', {
 
+    
     effect: "coverflow",
     grabCursor: true,
     centeredSlides: false,
     initialSlide: 0,
     speed: 600,
-    slidesPerView: "auto",
-    spaceBetween: 10,
+    slidesPerView: 1,
+    spaceBetween: 50,
+    clipToSide: true,
+    watchSlidesVisibility: true,
+    loop: true,
 
 
     coverflowEffect: {
@@ -123,26 +131,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     navigation: {
-      nextEl: BSnextBtn,
-      prevEl: BSprevBtn,
-      disabledClass: 'bestseller-swiper-button--disabled'
+      nextEl: nextBtn,
+      prevEl: prevBtn,
+      disabledClass: 'swiper-button--disabled'
     },
 
 
     pagination: {
-      el: ".bestseller-swiper-pagination",
-      enabled: false,
+      el: ".swiper-pagination",
+    
       clickable: true,
     },
 
 
     on: {
-      init: function () {
-        updateBSNavigationButtons(this);
-      },
-      slideChange: function () {
-        updateBSNavigationButtons(this);
-      },
+      // init: function () {
+      //   updateNavigationButtons(this);
+      // },
+      // slideChange: function () {
+      //   updateNavigationButtons(this);
+      // },
       click(event) {
         if (this.clickedIndex !== undefined) {
           this.slideTo(this.clickedIndex);
@@ -152,12 +160,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     breakpoints: {
 
-      768: {
-        slidesPerView: 1,
-        centeredSlides: false
-      },
-      1024: {
+      // 768: {
+      //   slidesPerView: 1,
+      //   centeredSlides: false
+      // },
+      1200: {
         slidesPerView: 2
+      },
+      1700: {
+        slidesPerView: 3
       }
     }
 
@@ -166,23 +177,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   BSprevBtn.addEventListener('click', () => bestsellerSwiper.slidePrev());
   BSnextBtn.addEventListener('click', () => bestsellerSwiper.slideNext());
-
-  function updateBSNavigationButtons(swiper) {
-
-
-    if (swiper.isBeginning) {
-      BSprevBtn.classList.add('bestseller-button--hidden');
-    } else {
-      BSprevBtn.classList.remove('bestseller-button--hidden');
-    }
-
-
-    if (swiper.isEnd) {
-      BSnextBtn.classList.add('bestseller-button--hidden');
-    } else {
-      BSnextBtn.classList.remove('bestseller-button--hidden');
-    }
-  }
 
 
 
@@ -194,8 +188,12 @@ document.addEventListener('DOMContentLoaded', () => {
     centeredSlides: false,
     initialSlide: 0,
     speed: 600,
-    slidesPerView: "auto",
-    spaceBetween: 10,
+    slidesPerView: 1,
+    spaceBetween: 50,
+    clipToSide: true,
+    watchSlidesVisibility: true,
+    loop: true,
+
 
     coverflowEffect: {
       rotate: 0,
@@ -207,26 +205,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     navigation: {
-      nextEl: RnextBtn,
-      prevEl: RprevBtn,
-      disabledClass: 'recipe-swiper-button--disabled'
+      nextEl: nextBtn,
+      prevEl: prevBtn,
+      disabledClass: 'swiper-button--disabled'
     },
 
 
     pagination: {
-      el: ".recipe-swiper-pagination",
-      enabled: false,
+      el: ".swiper-pagination",
+    
       clickable: true,
     },
 
 
     on: {
-      init: function () {
-        updateRNavigationButtons(this);
-      },
-      slideChange: function () {
-        updateRNavigationButtons(this);
-      },
+      // init: function () {
+      //   updateNavigationButtons(this);
+      // },
+      // slideChange: function () {
+      //   updateNavigationButtons(this);
+      // },
       click(event) {
         if (this.clickedIndex !== undefined) {
           this.slideTo(this.clickedIndex);
@@ -236,12 +234,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     breakpoints: {
 
-      768: {
-        slidesPerView: 1,
-        centeredSlides: false
-      },
-      1024: {
+      // 768: {
+      //   slidesPerView: 1,
+      //   centeredSlides: false
+      // },
+      1200: {
         slidesPerView: 2
+      },
+      1700: {
+        slidesPerView: 3
       }
     }
 
@@ -251,22 +252,6 @@ document.addEventListener('DOMContentLoaded', () => {
   RprevBtn.addEventListener('click', () => recipeSwiper.slidePrev());
   RnextBtn.addEventListener('click', () => recipeSwiper.slideNext());
 
-  function updateRNavigationButtons(swiper) {
-
-
-    if (swiper.isBeginning) {
-      RprevBtn.classList.add('recipe-button--hidden');
-    } else {
-      RprevBtn.classList.remove('recipe-button--hidden');
-    }
-
-
-    if (swiper.isEnd) {
-      RnextBtn.classList.add('recipe-button--hidden');
-    } else {
-      RnextBtn.classList.remove('recipe-button--hidden');
-    }
-  }
 
 
 
